@@ -1,0 +1,34 @@
+{
+	"name": "mister-donut",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+		"start:prod": "node server.js",
+		"start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+		"client": "cd client && npm run start",
+		"install": "cd client && npm install",
+		"build": "cd client && npm run build",
+		"heroku-postbuild": "npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Eshi44/Mister-Donut.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Eshi44/Mister-Donut/issues"
+	},
+	"homepage": "https://github.com/Eshi44/Mister-Donut#readme",
+	"dependencies": {
+		"express": "^4.17.1",
+		"if-env": "^1.0.4"
+	},
+	"devDependencies": {
+		"concurrently": "^5.2.0"
+	}
+}
